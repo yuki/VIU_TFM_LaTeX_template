@@ -1,0 +1,36 @@
+%---------------------------------------------------
+% Cover page (for A4 pagestyle)
+% to add it:   \coverpage
+%---------------------------------------------------
+
+\newcommand{\coverpage}[0]{
+
+\thispagestyle{empty}
+\newgeometry{margin=0pt}
+
+\pagecolor{viu-color}
+
+\begin{tcolorbox}[
+    boxrule=0mm,
+    arc=0mm,
+    colframe=viu-color,
+    colback=viu-color,
+    fit to={\paperwidth} and 1cm,
+    ]
+\end{tcolorbox}
+
+\hspace{200pt}\includesvg[width=0.9\columnwidth]{img/pildora.svg}
+
+\vspace{-300pt}\hspace{320pt}\includesvg[width=0.4\columnwidth]{img/logoVIU.svg}
+\vspace{40pt}
+
+\begin{center}
+    {\Huge \textbf{Título del máster}}
+\end{center}
+
+
+\restoregeometry
+\clearpage
+\pagecolor{white}
+
+} % end of /coverpage command

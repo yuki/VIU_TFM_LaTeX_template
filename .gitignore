@@ -1,0 +1,16 @@
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.listing
+*.log
+*.log
+*.out
+*.pdf
+*.run.xml
+*.synctex.gz
+*.toc
+*_minted*
+svg-inkscape

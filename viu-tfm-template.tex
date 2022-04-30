@@ -1,0 +1,22 @@
+\newcommand{\ClassPath}{.}
+\documentclass{\ClassPath/viu-tfm-template}
+
+\RequirePackage{blindtext} % se puede borrar al escribir el TFM
+
+% importar fichero de Bibliografía
+\addbibresource{bibliography.bib}
+
+\begin{document}
+    \coverpage
+
+    % opcional en artículos cortos
+    \tableofcontents
+
+    \chapter{Ejemplo de cita para bibliografía}
+    Tal como aparece en \textcite{einstein}, ...
+
+    \Blinddocument % ejemplo de texto, del paquete “blindtext”
+
+    % sólo si se tiene bibliografía
+    \printbibliography[title={Referencias bibliográficas},heading=bibintoc]
+\end{document}
