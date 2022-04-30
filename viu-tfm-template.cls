@@ -19,7 +19,7 @@
 \ProvidesClass{viu-tfm-template}[2021/11/24 Template for VIU's TFM]
 \LoadClass[11pt,a4paper,titlepage,twoside,openany]{book}
 
-\usepackage[left=3.00cm, right=3.00cm, top=3.00cm, bottom=3.00cm]{geometry}
+\usepackage[a4paper,margin=3cm,headsep=1.9cm,footskip=-1cm]{geometry}
 
 
 %--------------------------------------------------------------------------
@@ -78,6 +78,49 @@
 
 \RequirePackage{xcolor}
 
+%--------------------------------------------------------------------------
+% Header and footer styling
+%--------------------------------------------------------------------------
+\RequirePackage{tikz}
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhead{} % clear all header fields
+\fancyhead[LE]{
+    \hspace{-2.1cm}
+    \includesvg[width=4cm]{img/logoVIU.svg}
+}
+
+\fancyhead[RO]{
+    \includesvg[width=4cm]{img/logoVIU.svg}
+}
+%\renewcommand{\headrulewidth}{0pt} %remove the header's rule
+
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE]{
+%    \hspace{-1.5cm}
+    \begin{tikzpicture}
+        \path (0, 0);
+        \node at (0,1){\includesvg[width=1cm]{img/pildora2.svg}};
+        \node at (0,1){\color{white}\textbf{\thepage}};
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \path (0, 0);
+        \node at (0,1){\footnotesize\textit{\titulacion}};
+    \end{tikzpicture}
+}
+\fancyfoot[RO]{
+    \begin{tikzpicture}
+        \path (0, 0);
+        \node at (0,1){\footnotesize\textit{\titulo}};
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \path (0, 0);
+        \node at (0,1){\includesvg[width=1cm]{img/pildora2.svg}};
+        \node at (0,1){\color{white}\textbf{\thepage}};
+    \end{tikzpicture}
+}
+% TODO: change "\part"'s footer
 
 %--------------------------------------------------------------------------
 % Chapters and Titles definitions
@@ -140,7 +183,25 @@
 \RequirePackage{href-ul}
 
 
+%--------------------------------------------------------------------------
+% Tables
+%--------------------------------------------------------------------------
+\RequirePackage{tabularray}
+\UseTblrLibrary{varwidth}
+\SetTblrInner{
+    vlines,
+    hlines,
+}
 
+\NewTblrEnviron{covertbl}
+\SetTblrInner[covertbl]{
+    vline{1,2,3}={6pt},
+    vline{4}={0pt},
+%    rowsep=6pt,
+%    colsep=12pt,
+    cells={l,t},
+    width=0.8\linewidth
+}
 
 %--------------------------------------------------------------------------
 % Bibliography
