@@ -89,10 +89,30 @@
 \renewcommand{\footrulewidth}{0pt}
 
 \fancyhead{} % clear all header fields
-\fancyheadoffset{1.8cm}
-\fancyhead[LE]{\includesvg[height=1.5cm]{img/logoVIU.svg}}
+\fancyheadoffset{2.2cm}
+\fancyhead[LE]{
+    \begin{tikzpicture}
+        \path (0, 0);
+        \node at (0,1){\includesvg[height=1.5cm]{img/logoVIU-pildora.svg}};
+    \end{tikzpicture}
+    \hspace{0.1cm}
+    \begin{tikzpicture}
+        \path (0, 0);
+        \node at (0,1){\includesvg[height=1cm]{img/logoVIU-letras.svg}};
+    \end{tikzpicture}
+}
 % logotipo cambiado para páginas impares
-\fancyhead[RO]{\includesvg[height=1.5cm]{img/logoVIU2.svg}}
+\fancyhead[RO]{
+    \begin{tikzpicture}
+        \path (0, 0);
+        \node at (0,1){\includesvg[height=1cm]{img/logoVIU-letras.svg}};
+    \end{tikzpicture}
+    \hspace{-0.1cm}
+    \begin{tikzpicture}
+        \path (0, 0);
+        \node at (0,1){\includesvg[height=1.5cm]{img/logoVIU-pildora.svg}};
+    \end{tikzpicture}
+}
 
 \fancyfootoffset{2.2cm}
 \fancyfoot{} % clear all footer fields
