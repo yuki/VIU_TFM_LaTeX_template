@@ -19,7 +19,7 @@
 \ProvidesClass{viu-tfm-template}[2021/11/24 Template for VIU's TFM]
 \LoadClass[11pt,a4paper,titlepage,twoside,openany]{book}
 
-\usepackage[a4paper,margin=3cm,headsep=1.9cm,footskip=-1cm]{geometry}
+\usepackage[a4paper,margin=3cm,headsep=1.9cm,footskip=-0.7cm]{geometry}
 
 
 %--------------------------------------------------------------------------
@@ -85,25 +85,24 @@
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
 \fancyhead{} % clear all header fields
-\fancyhead[LE]{
-    \hspace{-2.1cm}
-    \includesvg[width=4cm]{img/logoVIU.svg}
-}
+\fancyheadoffset{1.8cm}
+\fancyhead[LE]{\includesvg[height=1.5cm]{img/logoVIU.svg}}
+% logotipo cambiado para páginas impares
+\fancyhead[RO]{\includesvg[height=1.5cm]{img/logoVIU2.svg}}
 
-\fancyhead[RO]{
-    \includesvg[width=4cm]{img/logoVIU.svg}
-}
-%\renewcommand{\headrulewidth}{0pt} %remove the header's rule
-
+\fancyfootoffset{2.2cm}
 \fancyfoot{} % clear all footer fields
 \fancyfoot[LE]{
-%    \hspace{-1.5cm}
     \begin{tikzpicture}
         \path (0, 0);
         \node at (0,1){\includesvg[width=1cm]{img/pildora2.svg}};
         \node at (0,1){\color{white}\textbf{\thepage}};
     \end{tikzpicture}
+    \hspace{0.5cm}
     \begin{tikzpicture}
         \path (0, 0);
         \node at (0,1){\footnotesize\textit{\titulacion}};
@@ -114,6 +113,7 @@
         \path (0, 0);
         \node at (0,1){\footnotesize\textit{\titulo}};
     \end{tikzpicture}
+    \hspace{0.5cm}
     \begin{tikzpicture}
         \path (0, 0);
         \node at (0,1){\includesvg[width=1cm]{img/pildora2.svg}};
