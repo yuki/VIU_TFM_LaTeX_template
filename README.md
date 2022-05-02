@@ -12,14 +12,18 @@ Para utilizar esta plantilla se requiere de las siguientes dependencias:
 Los datos que aparecen en la portada corresponden a las variables que aparecen en el fichero [viu-tfm-template.tex](viu-tfm-template.tex)**
 
 ```latex
-\newcommand{\nombre}{Apellido1 Apellido2, Nombre}
-\newcommand{\dni}{12345678-A}
-\newcommand{\dirige}{Nombre del director/a}
-\newcommand{\convocatoria}{Primera}
-\newcommand{\titulo}{Título del TFM}
-\newcommand{\titulacion}{Máster Universitario en Desarrollo de Aplicaciones y Servicios Web}
-\newcommand{\curso}{2022-2023}
+\def\nombre{Apellido1 Apellido2, Nombre}
+\def\dni{12345678-A}
+\def\titulo{Título del TFM}
+\def\titulacion{Máster Universitario en Desarrollo de Aplicaciones y Servicios Web}
+\def\curso{2022-2023}
+
+%Los siguientes son opcionales: si no se ponen, la portada cambia un poco. Ideal para escribir artículos/trabajos cortos
+\def\dirige{Nombre del director/a}
+\def\convocatoria{Primera}
 ```
+
+Las definiciones "dirige" y "convocatoria" son opcionales. Si están vacías, no aparecen en la portada. De esta manera, esta plantilla se puede utilizar para hacer otros trabajos que no sean el TFM
 
 ## Cómo se compila
 Para utilizar la plantilla, teniendo en cuenta el fichero de ejemplo de este repositorio y el ejemplo de bibliografía:
