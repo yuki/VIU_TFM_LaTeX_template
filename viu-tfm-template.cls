@@ -43,6 +43,9 @@
 %--------------------------------------------------------------------------
 % Fonts
 %--------------------------------------------------------------------------
+\RequirePackage{fontspec}
+\setmainfont{Arial}
+
 
 %--------------------------------------------------------------------------
 % TOC
@@ -78,6 +81,7 @@
 
 \RequirePackage{xcolor}
 
+
 %--------------------------------------------------------------------------
 % Header and footer styling
 %--------------------------------------------------------------------------
@@ -107,7 +111,7 @@
         \path (0, 0);
         \node at (0,1){\includesvg[height=1cm]{img/logoVIU-letras.svg}};
     \end{tikzpicture}
-    \hspace{-0.1cm}
+    \hspace{-0cm}
     \begin{tikzpicture}
         \path (0, 0);
         \node at (0,1){\includesvg[height=1.5cm]{img/logoVIU-pildora.svg}};
@@ -122,7 +126,7 @@
         \node at (0,1){\includesvg[width=1cm]{img/pildora2.svg}};
         \node at (0,1){\color{white}\textbf{\thepage}};
     \end{tikzpicture}
-    \hspace{0.5cm}
+    \hspace{0.6cm}
     \begin{tikzpicture}
         \path (0, 0);
         \node at (0,1){\footnotesize\textit{\titulacion}};
@@ -140,7 +144,7 @@
         \node at (0,1){\color{white}\textbf{\thepage}};
     \end{tikzpicture}
 }
-% TODO: change "\part"'s footer
+
 
 %--------------------------------------------------------------------------
 % Chapters and Titles definitions
@@ -222,6 +226,18 @@
     cells={l,t},
     width=0.8\linewidth
 }
+
+%--------------------------------------------------------------------------
+% Lists
+%--------------------------------------------------------------------------
+\usepackage{enumitem}
+% ITEMIZE
+\renewcommand{\labelitemi}{${\color{maincolor}\bullet}$}
+\renewcommand{\labelitemii}{$\textcolor{maincolor}{\circ}$}
+\renewcommand{\labelitemiii}{$\textcolor{maincolor}{\diamond}$}
+\renewcommand{\labelitemiv}{$\textcolor{maincolor}{\triangleright}$}
+% ENUMERATE
+\setlist[enumerate]{font=\bfseries\color{maincolor}}
 
 %--------------------------------------------------------------------------
 % Bibliography
