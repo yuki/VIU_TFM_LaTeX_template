@@ -90,6 +90,11 @@
 \pagestyle{fancy}
 
 \renewcommand{\headrulewidth}{0pt}
+
+%\usepackage{xpatch}
+
+
+
 \renewcommand{\footrulewidth}{0pt}
 
 \fancyhead{} % clear all header fields
@@ -97,24 +102,18 @@
 \fancyhead[LE]{
     \begin{tikzpicture}
         \path (0, 0);
-        \node at (0,1){\includesvg[height=1.5cm]{img/logoVIU-pildora.svg}};
-    \end{tikzpicture}
-    \hspace{0.1cm}
-    \begin{tikzpicture}
-        \path (0, 0);
-        \node at (0,1){\includesvg[height=1cm]{img/logoVIU-letras.svg}};
+        \node at (0,0){\includesvg[height=1.5cm]{img/logoVIU-pildora.svg}};
+        \node at (2.5,0){\includesvg[height=1cm]{img/logoVIU-letras.svg}};
+        \draw [maincolor,line width=1] (1.32,-0.8) --(16.3,-0.8);
     \end{tikzpicture}
 }
 % logotipo cambiado para páginas impares
 \fancyhead[RO]{
     \begin{tikzpicture}
         \path (0, 0);
-        \node at (0,1){\includesvg[height=1cm]{img/logoVIU-letras.svg}};
-    \end{tikzpicture}
-    \hspace{-0cm}
-    \begin{tikzpicture}
-        \path (0, 0);
-        \node at (0,1){\includesvg[height=1.5cm]{img/logoVIU-pildora.svg}};
+        \node at (0,0){\includesvg[height=1cm]{img/logoVIU-letras.svg}};
+        \node at (2.4,0){\includesvg[height=1.5cm]{img/logoVIU-pildora.svg}};
+        \draw [maincolor,line width=1] (1.2,-0.8) --(-13.8,-0.8);
     \end{tikzpicture}
 }
 
@@ -123,25 +122,19 @@
 \fancyfoot[LE]{
     \begin{tikzpicture}
         \path (0, 0);
-        \node at (0,1){\includesvg[width=1cm]{img/pildora2.svg}};
-        \node at (0,1){\color{white}\textbf{\thepage}};
-    \end{tikzpicture}
-    \hspace{0.6cm}
-    \begin{tikzpicture}
-        \path (0, 0);
-        \node at (0,1){\footnotesize\textit{\titulacion}};
+        \node at (0,0){\includesvg[width=1cm]{img/pildora2.svg}};
+        \node at (0,0){\color{white}\textbf{\thepage}};
+        \node at (6.3,0){\footnotesize\textit{\titulacion}};
+        \draw [maincolor,line width=1] (1.6,0.6) --(16.55,0.6);
     \end{tikzpicture}
 }
 \fancyfoot[RO]{
     \begin{tikzpicture}
         \path (0, 0);
-        \node at (0,1){\footnotesize\textit{\titulo}};
-    \end{tikzpicture}
-    \hspace{0.5cm}
-    \begin{tikzpicture}
-        \path (0, 0);
-        \node at (0,1){\includesvg[width=1cm]{img/pildora2.svg}};
-        \node at (0,1){\color{white}\textbf{\thepage}};
+        \node at (0,0){\includesvg[width=1cm]{img/pildora2.svg}};
+        \node at (0,0){\color{white}\textbf{\thepage}};
+        \node at (-2.5,0.02){\footnotesize\textit{\titulo}};
+        \draw [maincolor,line width=1] (-1.5,0.6) --(-16.45,0.6);
     \end{tikzpicture}
 }
 
