@@ -30,22 +30,30 @@
 
 \vfill
 
-{
-    \large
+% Tabla con los datos del documento/alumno/máster
+\large
 \begin{center}
     \color{white}
-    \begin{covertbl}{X[2] X[2] X[1]}
+    \begin{covertbl}{X[2]X[2]X[-1]}
         \textbf{Titulación:} \linebreak  \titulacion      &
           \textbf{Alumno/a:} \nombre  \linebreak \textbf{D.N.I.:} \dni  &
-          \textbf{Convocatoria:} \convocatoria
+
+          %HACK de la convocatoria
+          \def\temp{}\ifx\temp\convocatoria  \else
+            \textbf{Convocatoria:} \convocatoria
+          \fi
+
           \\
 
         \textbf{Curso académico:} \linebreak \curso    &
-          \textbf{Director/a de TFM:} \dirige &
+          % HACK para el director
+            \def\temp{}\ifx\temp\dirige   \else
+                \textbf{Director/a de TFM:} \dirige
+            \fi
+
           \\
     \end{covertbl}
 \end{center}
-}
 
 
 

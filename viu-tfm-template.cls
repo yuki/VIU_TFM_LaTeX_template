@@ -37,8 +37,9 @@
 \setlength{\parindent}{0em} % identation
 \setlength{\parskip}{1.2em}
 \renewcommand{\baselinestretch}{1.4}
-
-\sloppy % evita cortar palabras
+% evita cortar palabras
+\RequirePackage[none]{hyphenat}
+\sloppy
 
 %--------------------------------------------------------------------------
 % Fonts
@@ -224,6 +225,7 @@
 % Lists
 %--------------------------------------------------------------------------
 \usepackage{enumitem}
+\setlist{itemsep=0pt,parsep=0pt,partopsep=0pt}
 % ITEMIZE
 \renewcommand{\labelitemi}{${\color{maincolor}\bullet}$}
 \renewcommand{\labelitemii}{$\textcolor{maincolor}{\circ}$}
@@ -236,7 +238,7 @@
 % Bibliography
 %--------------------------------------------------------------------------
 %\usepackage[backend=biber,style=apa,natbib=true,sorting=nyt,url=false, isbn=false,doi=false]{biblatex}
-\usepackage[backend=biber,style=apa]{biblatex}
+\usepackage[backend=biber,style=apa6]{biblatex}
 
 \DefineBibliographyStrings{spanish}{%
     andothers = {et al\adddot},
