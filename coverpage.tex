@@ -19,7 +19,7 @@
     ]
 \end{tcolorbox}
 
-\hspace{200pt}\includesvg[width=0.9\columnwidth]{img/pildora.svg}
+\hspace{200pt}\includesvg[width=0.9\columnwidth]{img/pildora_blanca.svg}
 
 \vspace{-300pt}\hspace{320pt}\includesvg[width=0.4\columnwidth]{img/logoVIU.svg}
 \vspace{40pt}
@@ -46,11 +46,14 @@
           \\
 
         \textbf{Curso académico:} \linebreak \curso    &
-          % HACK para el director
+          % HACK para el director/a del TFM
             \def\temp{}\ifx\temp\dirige   \else
                 \textbf{Director/a de TFM:} \dirige
             \fi
-
+          % HACK para la asignatura
+            \def\temp{}\ifx\temp\asignatura   \else
+                \textbf{Asignatura:} \asignatura
+            \fi
           \\
     \end{covertbl}
 \end{center}

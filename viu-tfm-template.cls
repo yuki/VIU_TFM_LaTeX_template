@@ -19,8 +19,7 @@
 \ProvidesClass{viu-tfm-template}[2021/11/24 Template for VIU's TFM]
 \LoadClass[11pt,a4paper,titlepage,twoside,openany]{book}
 
-\usepackage[a4paper,margin=3cm,headsep=1.9cm,footskip=-0.7cm]{geometry}
-
+\usepackage[a4paper,margin=3cm,headheight=1.5cm,headsep=0.75cm,footskip=-0.75cm,]{geometry}
 
 %--------------------------------------------------------------------------
 % Language
@@ -90,53 +89,72 @@
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 
-\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\headrule}{
+    \begin{tikzpicture}
+        \path (0,0);
+        \draw [maincolor,line width=1] (2.2,0) --(17.2,0);
+    \end{tikzpicture}
+}
+\renewcommand{\footrule}{
+    \begin{tikzpicture}
+        \path (0,0);
+        \draw [maincolor,line width=1] (2.2,0) --(17.2,0);
+    \end{tikzpicture}
+}
 
-%\usepackage{xpatch}
 
-
-
-\renewcommand{\footrulewidth}{0pt}
+\fancyhfoffset{2.2cm} % offset head and footer
 
 \fancyhead{} % clear all header fields
-\fancyheadoffset{2.2cm}
+
 \fancyhead[LE]{
-    \begin{tikzpicture}
-        \path (0, 0);
-        \node at (0,0){\includesvg[height=1.5cm]{img/logoVIU-pildora.svg}};
-        \node at (2.5,0){\includesvg[height=1cm]{img/logoVIU-letras.svg}};
-        \draw [maincolor,line width=1] (1.32,-0.8) --(16.3,-0.8);
-    \end{tikzpicture}
+    \begin{minipage}{2.1cm}
+        \includesvg[height=\headheight]{img/logoVIU-pildora.svg}
+    \end{minipage}
+    \begin{minipage}{2cm}
+        \includesvg[height=0.6666\headheight]{img/logoVIU-letras.svg}
+    \end{minipage}
 }
 % logotipo cambiado para páginas impares
 \fancyhead[RO]{
-    \begin{tikzpicture}
-        \path (0, 0);
-        \node at (0,0){\includesvg[height=1cm]{img/logoVIU-letras.svg}};
-        \node at (2.4,0){\includesvg[height=1.5cm]{img/logoVIU-pildora.svg}};
-        \draw [maincolor,line width=1] (1.2,-0.8) --(-13.8,-0.8);
-    \end{tikzpicture}
+    \begin{minipage}{2.1cm}
+        \includesvg[height=0.6666\headheight]{img/logoVIU-letras.svg}
+    \end{minipage}
+    \begin{minipage}{2.32cm}
+        \begin{flushright}
+            \includesvg[height=\headheight]{img/logoVIU-pildora.svg}
+        \end{flushright}
+    \end{minipage}%
 }
 
-\fancyfootoffset{2.2cm}
 \fancyfoot{} % clear all footer fields
-\fancyfoot[LE]{
-    \begin{tikzpicture}
-        \path (0, 0);
-        \node at (0,0){\includesvg[width=1cm]{img/pildora2.svg}};
-        \node at (0,0){\color{white}\textbf{\thepage}};
-        \node at (6.3,0){\footnotesize\textit{\titulacion}};
-        \draw [maincolor,line width=1] (1.6,0.6) --(16.55,0.6);
-    \end{tikzpicture}
+\fancyfoot[LE]{%
+    \begin{minipage}{1cm}
+        \begin{tikzpicture}%
+            \path (0,0);%
+            \node at (0,0){\includesvg[width=1cm]{img/pildora_footer.svg}};%
+            \node at (0,0){\color{white}\textbf{\thepage}};%
+        \end{tikzpicture}%
+    \end{minipage}%
+    \hspace{1.1cm}
+    \begin{minipage}{0.7\linewidth}
+        \footnotesize\textit{\titulacion}
+    \end{minipage}
 }
 \fancyfoot[RO]{
-    \begin{tikzpicture}
-        \path (0, 0);
-        \node at (0,0){\includesvg[width=1cm]{img/pildora2.svg}};
-        \node at (0,0){\color{white}\textbf{\thepage}};
-        \node at (-2.5,0.02){\footnotesize\textit{\titulo}};
-        \draw [maincolor,line width=1] (-1.5,0.6) --(-16.45,0.6);
-    \end{tikzpicture}
+    \begin{minipage}{0.7\linewidth}
+        \begin{flushright}
+            \footnotesize\textit{\titulo}
+        \end{flushright}
+    \end{minipage}
+    \hspace{0.8cm}
+    \begin{minipage}{1.2cm}
+        \begin{tikzpicture}%
+            \path (0,0);%
+            \node at (0,0){\includesvg[width=1cm]{img/pildora_footer.svg}};%
+            \node at (0,0){\color{white}\textbf{\thepage}};%
+        \end{tikzpicture}%
+    \end{minipage}%
 }
 
 

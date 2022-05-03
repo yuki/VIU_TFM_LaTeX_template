@@ -17,6 +17,8 @@
 %Los siguientes son opcionales: si no se ponen, la portada cambia un poco. Ideal para escribir artículos/trabajos cortos
 \def\dirige{Nombre del director/a}
 \def\convocatoria{Primera}
+% No pongas nombre de la asignatura si pones algo en “\dirige”, porque no tiene sentido.
+\def\asignatura{}
 
 \RequirePackage{blindtext} % se puede borrar al escribir el TFM
 
@@ -26,7 +28,7 @@
 \begin{document}
     \coverpage
 
-    % opcional en artículos cortos
+    % opcional en artículos/trabajos/actividades cortos
     \tableofcontents
 
     \chapter{Ejemplo de cita para bibliografía}
@@ -38,14 +40,12 @@
 
     \cite{Xanthopoulos}  con cite
 
-
-
     \parencite{Xanthopoulos} con parencite
-
 
     \citeauthor{Xanthopoulos} con citeauthor
 
-    \Blinddocument % ejemplo de texto, del paquete “blindtext”
+    % ejemplo de texto, del paquete “blindtext”. Borrar al usar la plantilla.
+    \Blinddocument
 
     % sólo si se tiene bibliografía
     \printbibliography[title={Referencias bibliográficas},heading=bibintoc]
