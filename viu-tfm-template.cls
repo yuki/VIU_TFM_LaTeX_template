@@ -19,7 +19,7 @@
 \ProvidesClass{viu-tfm-template}[2021/11/24 Template for VIU's TFM]
 \LoadClass[11pt,a4paper,titlepage,twoside,openany]{book}
 
-\usepackage[a4paper,margin=3cm,headheight=1.5cm,headsep=0.75cm,footskip=-0.75cm,]{geometry}
+\usepackage[a4paper,margin=3cm,headheight=1.5cm,headsep=0.75cm,footskip=-0.75cm]{geometry}
 
 %--------------------------------------------------------------------------
 % Language
@@ -89,72 +89,59 @@
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 
-\renewcommand{\headrule}{
-    \begin{tikzpicture}
-        \path (0,0);
-        \draw [maincolor,line width=1] (2.2,0) --(17.2,0);
-    \end{tikzpicture}
-}
-\renewcommand{\footrule}{
-    \begin{tikzpicture}
-        \path (0,0);
-        \draw [maincolor,line width=1] (2.2,0) --(17.2,0);
-    \end{tikzpicture}
-}
-
-
-\fancyhfoffset{2.2cm} % offset head and footer
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
 \fancyhead{} % clear all header fields
 
-\fancyhead[LE]{
-    \begin{minipage}{2.1cm}
-        \includesvg[height=\headheight]{img/logoVIU-pildora.svg}
-    \end{minipage}
-    \begin{minipage}{2cm}
-        \includesvg[height=0.6666\headheight]{img/logoVIU-letras.svg}
-    \end{minipage}
+\newcommand{\fakerule}[2]{
+    % fake head/foot rule
+    \node [fill=maincolor,anchor=#1 west,xshift=3cm,yshift=#2,minimum height=1pt,minimum width=15cm] at (current page.#1 west) {};
 }
-% logotipo cambiado para páginas impares
-\fancyhead[RO]{
-    \begin{minipage}{2.1cm}
-        \includesvg[height=0.6666\headheight]{img/logoVIU-letras.svg}
-    \end{minipage}
-    \begin{minipage}{2.32cm}
-        \begin{flushright}
+
+\newcommand{\drawhead}[2]{
+    \begin{tikzpicture}[remember picture,overlay,inner sep=0pt]
+        %fill=blue,
+        \node [anchor=north #1, minimum height=3cm, minimum width=3cm] at (current page.north #1) {
             \includesvg[height=\headheight]{img/logoVIU-pildora.svg}
-        \end{flushright}
-    \end{minipage}%
+        };
+        \node [anchor=north #1,xshift=#2,minimum height=3cm] at (current page.north #1) {
+            \includesvg[height=0.666\headheight]{img/logoVIU-letras.svg}
+        };
+        \fakerule{north}{-2.25cm}
+    \end{tikzpicture}
+}
+
+\fancyhead[LE]{
+    \drawhead{west}{3cm}
+}
+
+\fancyhead[RO]{
+    \drawhead{east}{-3cm}
 }
 
 \fancyfoot{} % clear all footer fields
-\fancyfoot[LE]{%
-    \begin{minipage}{1cm}
-        \begin{tikzpicture}%
-            \path (0,0);%
-            \node at (0,0){\includesvg[width=1cm]{img/pildora_footer.svg}};%
-            \node at (0,0){\color{white}\textbf{\thepage}};%
-        \end{tikzpicture}%
-    \end{minipage}%
-    \hspace{1.1cm}
-    \begin{minipage}{0.7\linewidth}
-        \footnotesize\textit{\titulacion}
-    \end{minipage}
+
+\newcommand{\drawfooter}[3]{
+    \begin{tikzpicture}[remember picture,overlay,inner sep=0pt]
+        \node [anchor=south #1, minimum height=3cm, minimum width=3cm] at (current page.south #1) {
+                \includesvg[height=1cm]{img/pildora_footer.svg}
+            };
+        \node [anchor=south #1, minimum height=3cm, minimum width=3cm] at (current page.south #1) {
+                \color{white}\textbf{\thepage}
+            };
+        \node [anchor=south #1,xshift=#2,minimum height=3cm] at (current page.south #1) {
+                \footnotesize\textit{#3}
+            };
+        \fakerule{south}{2.25cm}
+    \end{tikzpicture}
+}
+
+\fancyfoot[LE]{
+    \drawfooter{west}{3cm}{\titulacion}
 }
 \fancyfoot[RO]{
-    \begin{minipage}{0.7\linewidth}
-        \begin{flushright}
-            \footnotesize\textit{\titulo}
-        \end{flushright}
-    \end{minipage}
-    \hspace{0.8cm}
-    \begin{minipage}{1.2cm}
-        \begin{tikzpicture}%
-            \path (0,0);%
-            \node at (0,0){\includesvg[width=1cm]{img/pildora_footer.svg}};%
-            \node at (0,0){\color{white}\textbf{\thepage}};%
-        \end{tikzpicture}%
-    \end{minipage}%
+    \drawfooter{east}{-3cm}{\titulo}
 }
 
 
