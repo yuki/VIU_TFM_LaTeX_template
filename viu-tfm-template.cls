@@ -226,6 +226,28 @@
     width=0.8\linewidth
 }
 
+\NewTblrEnviron{requisitostbl}
+\SetTblrInner[requisitostbl]{
+    hspan=minimal,
+    measure=vbox,
+    vlines={maincolor},
+    vline{2,3,4,5}={1,2}{white},
+    hlines={maincolor},
+    hline{2}={white},
+    row{1,2} = {
+        bg=maincolor,
+        fg=white,
+        font=\bfseries,
+        halign={c},
+    },
+    row{3}={
+        halign={c},
+        font=\bfseries,
+    },
+    cell{3,4,5,6}{1} = {c=5}{},
+%    width=\linewidth
+}
+
 %--------------------------------------------------------------------------
 % Lists
 %--------------------------------------------------------------------------
@@ -243,7 +265,7 @@
 % Bibliography
 %--------------------------------------------------------------------------
 %\usepackage[backend=biber,style=apa,natbib=true,sorting=nyt,url=false, isbn=false,doi=false]{biblatex}
-\usepackage[backend=biber,style=apa6]{biblatex}
+\usepackage[backend=biber,style=apa6,citestyle=apa6]{biblatex}
 
 \DefineBibliographyStrings{spanish}{%
     andothers = {et al\adddot},
