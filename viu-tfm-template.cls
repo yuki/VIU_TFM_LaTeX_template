@@ -211,6 +211,14 @@
 %--------------------------------------------------------------------------
 \RequirePackage{tabularray}
 \UseTblrLibrary{varwidth}
+
+\DefTblrTemplate{contfoot-text}{default}{}
+\DefTblrTemplate{conthead-text}{default}{}
+\DefTblrTemplate{caption}{default}{}
+\DefTblrTemplate{conthead}{default}{}
+\DefTblrTemplate{capcont}{default}{}
+
+
 \SetTblrInner{
     vlines,
     hlines,
@@ -227,13 +235,17 @@
 }
 
 \NewTblrEnviron{requisitostbl}
+%\SetTblrOuter[requisitostbl]{
+%    long,
+%    label=none,
+%}
 \SetTblrInner[requisitostbl]{
     hspan=minimal,
     measure=vbox,
     vlines={maincolor},
     vline{2,3,4,5}={1,2}{white},
     hlines={maincolor},
-    hline{2}={white},
+    hline{2}={0pt},
     row{1,2} = {
         bg=maincolor,
         fg=white,
