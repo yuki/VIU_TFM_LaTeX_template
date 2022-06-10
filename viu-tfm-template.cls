@@ -73,6 +73,7 @@
 % Graphics and Color definitions
 %--------------------------------------------------------------------------
 \RequirePackage{graphicx}
+\RequirePackage[export]{adjustbox} % frames in graphics
 \RequirePackage{svg} % for svg images
 
 \RequirePackage{tcolorbox}
@@ -264,7 +265,7 @@
 % Lists
 %--------------------------------------------------------------------------
 \usepackage{enumitem}
-\setlist{itemsep=0pt,parsep=0pt,partopsep=0pt}
+%\setlist{itemsep=0pt,parsep=0pt,partopsep=0pt}
 % ITEMIZE
 \renewcommand{\labelitemi}{${\color{maincolor}\bullet}$}
 \renewcommand{\labelitemii}{$\textcolor{maincolor}{\circ}$}
