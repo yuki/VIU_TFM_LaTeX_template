@@ -10,23 +10,30 @@
 
 \pagecolor{maincolor}
 
-\begin{tcolorbox}[
-    boxrule=0mm,
-    arc=0mm,
-    colframe=maincolor,
-    colback=maincolor,
-    fit to={\paperwidth} and 1cm,
-    ]
-\end{tcolorbox}
+\begin{tikzpicture}[remember picture,overlay]
+    \node [yshift=-9cm,xshift=4.4cm, opacity=1] at (current page.north west) {
+        \includesvg[width=0.3\columnwidth]{img/sello-viu.svg}
+    };
+\end{tikzpicture}
 
-\hspace{200pt}\includesvg[width=0.9\columnwidth]{img/pildora_blanca.svg}
+\begin{tikzpicture}[remember picture,overlay]
+    \node [yshift=-8cm,xshift=-5cm] at (current page.north east) {
+        \includesvg[width=0.7\columnwidth]{img/pildora_blanca.svg}
+    };
+\end{tikzpicture}
+\begin{tikzpicture}[remember picture,overlay]
+    \node [yshift=-9cm,xshift=-6cm] at (current page.north east) {
+        \includesvg[width=0.4\columnwidth]{img/logoVIU.svg}
+    };
+\end{tikzpicture}
 
-\vspace{-300pt}\hspace{320pt}\includesvg[width=0.4\columnwidth]{img/logoVIU.svg}
-\vspace{40pt}
 
-\begin{center}
-    {\Huge \textbf{\titulo}}
-\end{center}
+
+\begin{tikzpicture}[remember picture,overlay,inner sep=0cm]
+    \node [yshift=-2cm] at (current page.center) {
+        {\color{white}\Huge \textbf{\titulo}}
+    };
+\end{tikzpicture}
 
 \vfill
 
