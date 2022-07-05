@@ -274,6 +274,23 @@
 % ENUMERATE
 \setlist[enumerate]{font=\bfseries\color{maincolor}}
 
+
+%--------------------------------------------------------------------------
+% Programming CODE box
+%--------------------------------------------------------------------------
+\RequirePackage{tcolorbox}
+\tcbuselibrary{raster,fitting,minted,many,listings,breakable}
+\RequirePackage{fontawesome5}
+\usemintedstyle{friendly}
+
+\newtcblisting[auto counter,number within=section, list inside=mycommands]
+{mycode}[3]{
+    listing only,adjusted title={\faCode \hspace{10pt}#1}, listing engine=minted,minted language=#2,
+    breakable=true,enhanced jigsaw,
+    minted options={fontsize=#3},colback=white,colframe=maincolor,
+    list entry={\protect\numberline{\thetcbcounter}#1}
+}
+
 %--------------------------------------------------------------------------
 % Bibliography
 %--------------------------------------------------------------------------

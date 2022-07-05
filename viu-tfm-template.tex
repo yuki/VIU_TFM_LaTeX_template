@@ -44,6 +44,36 @@
 
     \citeauthor{Xanthopoulos} con citeauthor
 
+    \chapter{Ejemplo de código fuente}
+    Un ejemplo de código de terminal GNU/Linux:
+
+\begin{mycode}{Config file}{console}{}
+[root@localhost ~]# vi /etc/systemd/journald.conf
+\end{mycode}
+
+
+    Un ejemplo de código en Python:
+
+\begin{mycode}{Hello World}{python}{}
+#!/usr/bin/env python
+
+# Defining main function
+def main():
+    print("Hello World!")
+
+# Using the special variable: __name__
+if __name__=="__main__":
+    main()
+\end{mycode}
+
+Para genera estos códigos, se tiene que utilizar el siguiente código en \LaTeX:
+\begin{mycode}{Ejemplo}{latex}{}
+\begin{mycode}{Título}{lenguaje}{\normalsize}
+\end{mycode}
+
+Y luego se cierra el bloque. Lo mejor es mirar el código fuente de este fichero.
+
+
     \chapter{Ejemplo de requisitos}
     Ejemplo de requisitos en ingeniería de software:
 
