@@ -291,6 +291,21 @@
     list entry={\protect\numberline{\thetcbcounter}#1}
 }
 
+\DeclareTotalTCBox{\inlineconsole}{ v }
+{verbatim,colupper=white,colback=maincolor,colframe=black,enhanced}{\textbf{#1}}
+
+\DeclareTotalTCBox{\commandbox}{ v }
+{verbatim,colupper=white,colback=maincolor,colframe=black,enhanced}{\faTerminal\hspace{0pt}
+  \textbf{#1}}
+
+\DeclareTotalTCBox{\configfile}{ v }
+{verbatim,colupper=white,colback=maincolor,colframe=black,enhanced}{\faFile\hspace{0pt}
+  \textbf{#1}}
+
+\DeclareTotalTCBox{\configdir}{ v }
+{verbatim,colupper=white,colback=maincolor,colframe=black,enhanced}{\faFolderOpen\hspace{0pt}
+  \textbf{#1}}
+
 %--------------------------------------------------------------------------
 % Bibliography
 %--------------------------------------------------------------------------
