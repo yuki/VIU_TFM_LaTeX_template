@@ -27,6 +27,7 @@
 \RequirePackage[spanish]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{csquotes}
+\RequirePackage{amsfonts}
 
 
 
@@ -259,6 +260,27 @@
     },
     cell{3,4,5,6}{1} = {c=5}{},
 %    width=\linewidth
+}
+
+\NewTblrEnviron{yukitblrcol}
+\SetTblrInner[yukitblrcol]{
+    vlines,
+    hlines,
+    hline{1,1}={wd=0pt},
+    vline{1,1}={wd=0pt},
+    rowsep=6pt,
+    colsep=12pt,
+    row{odd} = {maincolor!10},
+    row{1} = {bg=maincolor,fg=white,font=\bfseries},
+    column{1} = {bg=maincolor,fg=white,font=\bfseries},
+    cells={c,m},
+    cell{1}{1}={bg=white},
+    %    rowhead=1, %repeat head in new page
+}
+
+\SetTblrOuter[yukitblrcol]{
+    long,
+    label=none,
 }
 
 %--------------------------------------------------------------------------
