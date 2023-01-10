@@ -328,6 +328,20 @@
 {verbatim,colupper=white,colback=maincolor,colframe=black,enhanced}{\faFolderOpen\hspace{0pt}
   \textbf{#1}}
 
+
+%--------------------------------------------------------------------------
+% Keywords for abstract
+%--------------------------------------------------------------------------
+
+% Keywords command
+\providecommand{\keywords}[1]{
+    \small
+    \begin{center}
+        \textbf{\textit{Palabras clave:}} #1
+    \end{center}
+}
+
+
 %--------------------------------------------------------------------------
 % Bibliography
 %--------------------------------------------------------------------------

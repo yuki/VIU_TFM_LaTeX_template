@@ -27,9 +27,7 @@
     };
 \end{tikzpicture}
 
-\vspace*{\fill}
-\vspace*{\fill}
-\vspace*{\fill}
+\vspace{13cm}
 \vspace*{\fill}
 % Esto se debería mejorar, pero la opción anterior con Tikz no me convence
 \begin{center}
@@ -43,10 +41,16 @@
 \large
 \begin{center}
     \color{white}
-    \begin{covertbl}{X[2]X[2]X[-1]}
+    \begin{covertbl}{X[2]X[3]X[-1]}
         \textbf{Titulación:} \linebreak  \titulacion      &
-          \textbf{Alumno/a:} \nombre  \linebreak \textbf{D.N.I.:} \dni  &
+          \textbf{Alumno/a:} \nombre  \linebreak \textbf{D.N.I.:} \dni
 
+          \vspace{15pt}
+          % HACK para el director/a del TFM
+          \def\temp{}\ifx\temp\dirige   \else
+          \textbf{Director/a de TFM:} \linebreak\hspace*{30pt} \dirige
+          \fi
+           &
           %HACK de la convocatoria
           \def\temp{}\ifx\temp\convocatoria  \else
             \textbf{Convocatoria:} \convocatoria
@@ -55,9 +59,9 @@
           \\
 
         \textbf{Curso académico:} \curso    &
-          % HACK para el director/a del TFM
+          % HACK para el codirector/a del TFM
             \def\temp{}\ifx\temp\dirige   \else
-                \textbf{Director/a de TFM:} \dirige
+                \textbf{Co-Director/a de TFM:} \linebreak \hspace*{30pt} \codirige
             \fi
           % HACK para la asignatura
             \def\temp{}\ifx\temp\asignatura   \else
