@@ -32,6 +32,8 @@
 % Esto se debería mejorar, pero la opción anterior con Tikz no me convence
 \begin{center}
     {\color{white}\Huge \textbf{\titulo}}
+
+    {\color{white}\Large \textbf{\subtitulo}}
 \end{center}
 
 
@@ -60,7 +62,7 @@
 
         \textbf{Curso académico:} \curso    &
           % HACK para el codirector/a del TFM
-            \def\temp{}\ifx\temp\dirige   \else
+            \def\temp{}\ifx\temp\codirige   \else
                 \textbf{Co-Director/a de TFM:} \linebreak \hspace*{30pt} \codirige
             \fi
           % HACK para la asignatura
