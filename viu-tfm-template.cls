@@ -41,11 +41,16 @@
 \RequirePackage[none]{hyphenat}
 \sloppy
 
+\RequirePackage[dvipsnames]{xcolor}
+
 %--------------------------------------------------------------------------
 % Fonts
 %--------------------------------------------------------------------------
 \RequirePackage{fontspec}
 \setmainfont{Arial}
+\RequirePackage{pifont}
+\newcommand{\cmark}{\color{ForestGreen}\ding{51}}
+\newcommand{\xmark}{\color{BrickRed}\ding{55}}
 
 
 %--------------------------------------------------------------------------
@@ -80,8 +85,6 @@
 \RequirePackage{tcolorbox}
 \tcbuselibrary{raster,fitting,minted,many,listings,breakable,skins}
 \usetikzlibrary{decorations.pathmorphing}
-
-\RequirePackage{xcolor}
 
 
 %--------------------------------------------------------------------------
@@ -206,6 +209,16 @@
     bookmarksopen=true
 }
 \RequirePackage{href-ul}
+
+% links para las cabeceras de las tablas
+\newcommand{\titlehref}[3][white]{
+    \hypersetup{
+        colorlinks=true,
+        pdfborder = {0 0 0},
+        urlcolor=#1,
+    }
+    \href{#2}{#3}
+}
 
 
 %--------------------------------------------------------------------------
