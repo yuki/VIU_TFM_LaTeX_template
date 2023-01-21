@@ -296,6 +296,20 @@
     label=none,
 }
 
+\NewTblrEnviron{columntblr}
+\SetTblrInner[columntblr]{
+    vlines, hlines,
+    row{odd} = {maincolor!10},
+    row{1} = {bg=maincolor,fg=white,font=\bfseries},
+    column{1} = {bg=maincolor,fg=white,font=\bfseries},
+    cells={c,m}
+}
+
+%\SetTblrOuter[columntblr]{
+%    long,
+%    label=none,
+%}
+
 %--------------------------------------------------------------------------
 % Lists
 %--------------------------------------------------------------------------
