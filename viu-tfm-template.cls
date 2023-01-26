@@ -74,6 +74,10 @@
 
 \@addtoreset{chapter}{part}
 
+% TOC Figures \listoffigures
+\RequirePackage{caption} %captionof figure
+\captionsetup{labelfont={bf,scriptsize},textfont={scriptsize}, justification=centering}
+
 
 %--------------------------------------------------------------------------
 % Graphics and Color definitions
