@@ -24,7 +24,7 @@
 %--------------------------------------------------------------------------
 % Language
 %--------------------------------------------------------------------------
-\RequirePackage[spanish]{babel}
+\RequirePackage[spanish,es-tabla]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{csquotes}
 \RequirePackage{amsfonts}
@@ -231,11 +231,13 @@
 \RequirePackage{tabularray}
 \UseTblrLibrary{varwidth}
 
+% eliminamos las continuaciones de las tablas largas y los “caption” automáticos
 \DefTblrTemplate{contfoot-text}{default}{}
 \DefTblrTemplate{conthead-text}{default}{}
 \DefTblrTemplate{caption}{default}{}
 \DefTblrTemplate{conthead}{default}{}
 \DefTblrTemplate{capcont}{default}{}
+\DefTblrTemplate{caption}{default}{}
 
 
 \SetTblrInner{
