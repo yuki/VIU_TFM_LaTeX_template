@@ -1,11 +1,13 @@
 # Plantilla TFM para la [VIU](https://www.universidadviu.com/es/)
-Plantilla LaTeX para el Trabajo Fin de Máster (TFM) de la [VIU](https://www.universidadviu.com/es/).
+Plantilla LaTeX creada para hacer el Trabajo Fin de Máster (TFM) de la [VIU](https://www.universidadviu.com/es/).
 
 Puedes ver el ejemplo de cómo queda el PDF en el fichero **[viu-tfm-template.pdf](viu-tfm-template.pdf)**
 
+**NOTA**: No pertenezco a la VIU, por lo que cualquier modificación de requisito posterior al curso 2022-2023 no se verá reflejada en esta plantilla. Si quieres aportar modificaciones serán bienvenidas mediante un pull-request o a través de un "issue". Si has utilizado esta plantilla, o tienes dudas, también me lo puedes decir a través de los *issues* y te intentaré ayudar.
+
 # Uso
 Para utilizar esta plantilla se requiere de las siguientes dependencias:
-* LuaLaTeX (se puede instalar con TexLive)
+* LuaLaTeX (se puede instalar con [TeX Live](https://tug.org/texlive/))
 * [Inkscape](https://inkscape.org/) para utilizar gráficos SVG.
 
 Puedes utilizar el fichero **[viu-tfm-template.tex](viu-tfm-template.tex)** como guía para crear tu TFM.
@@ -30,6 +32,26 @@ Los datos que aparecen en la portada corresponden a las variables que aparecen e
 Las definiciones "dirige" y "convocatoria" son opcionales. Si están vacías, no aparecen en la portada.
 
 Buscando que la plantilla se pueda usar en trabajos/actividades de asignaturas, he añadido la definición "asignatura" para ello. **No uses "asignatura" con "dirige"**.
+
+
+## Cómo poner código fuente
+Se ha creado un bloque propio "mycode" para poder añadir código fuente en el documento. Por ejemplo:
+
+```latex
+\begin{mycode}{Hello World}{python}{}
+#!/usr/bin/env python
+# Defining main function
+def main():
+    print("Hello World!")
+
+\end{mycode}
+```
+
+Tal como se puede ver, es un bloque que empieza por "\begin{mycode}" y que recibe 2 parámetros:
+- "{Hello World}": Es el título del apartado. Puedes ver un ejemplo en el fichero **[viu-tfm-template.pdf](viu-tfm-template.pdf)**
+- "{python}": El segundo parámetro hace referencia al lenguaje de programación del bloque.
+
+Estos bloques, si miras la plantilla, hacen uso del paquete [tcolorbox](https://ctan.javinator9889.com/macros/latex/contrib/tcolorbox/tcolorbox.pdf) y la librería [minted](https://github.com/gpoore/minted)
 
 
 ## Cómo se compila
